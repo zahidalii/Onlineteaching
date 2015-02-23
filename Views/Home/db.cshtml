@@ -1,0 +1,30 @@
+﻿@model List<MvcApp.Models.Teacher>
+@{
+    ViewBag.Title = "db";
+}
+
+<h2>List Of Teachers</h2>
+<table>
+    <tr>
+        <td> ID</td>
+        <td> Name</td>
+        <td> Address</td>
+        <td> Course-ID</td>
+
+    </tr>
+    @foreach (var s in Model)
+    { 
+        <tr>
+            <td>@s.Id</td>
+            
+            <td>@s.T_Name</td>
+            <td>@s.T_Address</td>
+            <td>@s.T_CID</td>
+            <td>
+                <a href="/Home/Update/@s.Id">Update</a>
+                <a href="/Home/Delete/@s.Id">Delete</a>
+            </td>
+        </tr>
+    
+    }
+        </table>
